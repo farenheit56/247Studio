@@ -47,8 +47,16 @@ app.get('/', (req, res) => {
     })
     });
 
-app.get('/aboutus', (req, res) => {
-            res.render('who')
+app.get('/actualidad', (req, res) => {
+            res.render('actualidad')
+    });    
+
+app.get('/trayectoria', (req, res) => {
+            res.render('trayectoria')
+    });    
+    
+app.get('/escuela', (req, res) => {
+            res.render('escuela')
     });    
 
 app.route('/contact')
