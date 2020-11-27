@@ -38,26 +38,38 @@ app.use('/assets', express.static('assets'))
 
 //Seteo de peticiones GET
 app.get('/', (req, res) => {
-    data.allnews((err, allNews) => {
-        if(err){
-            res.render('error');
-        }else {        
-            res.render('home', {allNews});           
-        }
-    })
-    });
+  data.allnews((err, allNews) => {
+    if (err) {
+      res.render('error');
+    } else {
+      res.render('home', { allNews });
+    }
+  })
+});
 
 app.get('/actualidad', (req, res) => {
-            res.render('actualidad')
-    });    
+  res.render('actualidad')
+});    
 
 app.get('/trayectoria', (req, res) => {
-            res.render('trayectoria')
-    });    
+  res.render('trayectoria')
+});    
     
 app.get('/escuela', (req, res) => {
-            res.render('escuela')
-    });    
+  res.render('escuela')
+});  
+
+app.get('/salas', (req, res) => {
+  res.render('salas')
+});    
+
+app.get('/produccion', (req, res) => {
+  res.render('produccion')
+}); 
+
+app.get('/alquiler', (req, res) => {
+  res.render('alquiler')
+});  
 
 app.route('/contact')
   .get( (req, res) => {
