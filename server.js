@@ -69,7 +69,17 @@ app.get('/produccion', (req, res) => {
 
 app.get('/alquiler', (req, res) => {
   res.render('alquiler')
-});  
+}); 
+
+app.get('/roster', (req, res) => {
+  data.allmembers((err, allMembers) => {
+    if (err) {
+      res.render('error');
+    } else {
+      res.render('roster', { allMembers });
+    }
+  })
+}); 
 
 app.route('/contact')
   .get( (req, res) => {
