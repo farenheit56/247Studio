@@ -71,6 +71,10 @@ app.get('/alquiler', (req, res) => {
   res.render('alquiler')
 }); 
 
+app.get('/contacto', (req, res) => {
+  res.render('contacto')
+}); 
+
 app.get('/roster', (req, res) => {
   data.allmembers((err, allMembers) => {
     if (err) {
@@ -80,71 +84,6 @@ app.get('/roster', (req, res) => {
     }
   })
 }); 
-
-app.route('/contact')
-  .get( (req, res) => {
-    data.allevents((err, datos) => {
-        if(err){
-            res.render('error');
-        }else {
-            res.render('contact')
-        }
-    })
-    })
-  .post( (req,res) => {
-    let contactName = req.body.contactName;
-    let contactEmail = req.body.contactEmail;
-    let contactMessage = req.body.contactMessage;
-
-    const msgContact = {
-      to: 'abezeweb@gmail.com',
-      from: contactEmail,
-      reply_to: contactEmail,
-      dynamic_template_data: {
-        name: contactName,
-        email: contactEmail,
-        message: contactMessage, 
-      },
-      template_id: 'd-48bb31af265c4df9a5621b1b8d08c999', 
-    };    
-    sgMail.send(msgContact);
-    res.redirect('https://www.abezeweb.com/contact'); 
-  })  ; 
-
-
-app.route("/event")
-    .get((req,res) => {
-        var id= req.query.id;
-        data.event(id,  (err,datos) => {
-            if(err){
-                res.render('error');  
-            }else{
-              let prueba = JSON.stringify(datos.guest_pics);
-              let prueba2 = prueba.replace(/"([^"]+)":/g, '$1:');
-              data.allimages(id, (err,images) => {
-                if(err){
-                    res.render('error');
-                }else {
-                  data.lastreviews(id, (err,reviews) => {
-                    if(err){
-                      res.render('error');
-                    } else {
-                      reviewsFinal = reviews[0];
-                      data.lastguestpics(id, (err, guestpics) => {
-                        if(err) {
-                          res.render('error');
-                        } else {
-                          guestpicsFinal = guestpics[0];
-                          res.render('event', {datos, images, reviewsFinal, guestpicsFinal, prueba2});
-                        }
-                      })                                           
-                    }
-                  })                    
-                }
-            }) 
-            };
-        });
-})
 
 //Iniciar servidor
 app.listen(PORT, () => {

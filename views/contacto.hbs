@@ -1,0 +1,229 @@
+<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-bars"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="/" class="standard-logo" data-dark-logo="../../assets/images/logo-dark.png"><img src="../../assets/images/logo-dark.png" alt="247 Studio Logo"></a>						
+            			<a href="/" class="retina-logo" data-dark-logo="../../assets/images/logo-dark.png"><img src="../../assets/images/logo-dark.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu" class="dark">
+
+						<ul>
+							<li><a href="/">
+									<div>Home</div>
+								</a></li>
+							<li ><a href="#">
+									<div>Estudio</div>
+								</a>
+								<ul>
+									<li><a href="/actualidad">
+											<div><i class="icon-compact-disc"></i>Actualidad</div>
+										</a></li>
+									<li><a href="/trayectoria">
+											<div><i class="icon-headphones"></i>Trayectoria</div>
+										</a></li>
+								</ul>
+							</li>
+							<li><a href="#">
+									<div>Servicios</div>
+								</a>
+								<ul>
+									<li><a href="/escuela">
+											<div><i class="icon-vynil"></i>Escuela de DJ</div>
+										</a></li>
+									<li><a href="/salas">
+											<div><i class="icon-volume"></i>Salas de Ensayo</div>
+										</a></li>
+									<li><a href="/produccion">
+											<div><i class="icon-calendar-alt"></i>Producción de Eventos</div>
+										</a></li>
+									<li><a href="/alquiler">
+											<div><i class="icon-dollar-sign"></i>Alquiler de Equipos</div>
+										</a></li>
+								</ul>
+							</li>
+							<li><a href="/roster">
+									<div>Roster</div>
+								</a></li>
+							<li class="current"><a href="/contacto">
+									<div>Contacto</div>
+								</a></li>
+						</ul>
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix">
+			<div class="slider-parallax-inner">
+
+				<div class="swiper-container swiper-parent">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide dark">
+							<div class="container clearfix">
+								<div class="slider-caption slider-caption-center">
+									
+                                    <h2 data-animate="fadeInUp">Contacto</h2>
+								</div>
+							</div>
+							<div class="video-wrap">
+								<video id="slide-video" poster="../../assets/images/videos/explore.jpg" preload="auto" loop autoplay muted>
+									<source src='../../assets/images/videos/explore.webm' type='video/webm' />
+									<source src='../../assets/images/videos/explore.mp4' type='video/mp4' />
+								</video>
+								<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a href="#" data-scrollto="#content" data-offset="100" class="dark one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+			</div>
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<!-- Contact Form
+					============================================= -->
+
+						<div class="fancy-title title-dotted-border">
+							<h3>Envianos un mensaje</h3>
+						</div>
+
+						<div class="form-widget">
+
+							<div class="form-result"></div>
+
+							<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/form.php" method="post">
+
+								<div class="form-process"></div>
+
+								<div class="col_one_third">
+									<label for="template-contactform-name">Nombre <small>*</small></label>
+									<input type="text" id="inputName" name="inputName" value="" class="sm-form-control required" />
+								</div>
+
+								<div class="col_one_third">
+									<label for="template-contactform-email">Email <small>*</small></label>
+									<input type="email" id="inputEmail" name="inputEmail" value="" class="required email sm-form-control" />
+								</div>
+
+								<div class="col_one_third col_last">
+									<label for="template-contactform-phone">Teléfono</label>
+									<input type="text" id="inputPhone" name="inputPhone" value="" class="sm-form-control" />
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_two_third">
+									<label for="template-contactform-subject">Asunto <small>*</small></label>
+									<input type="text" id="inputSubject" name="inputSubject" value="" class="required sm-form-control" />
+								</div>
+
+								<div class="col_one_third col_last">
+									<label for="template-contactform-service">Servicios</label>
+									<select id="inputService" name="inputService" class="sm-form-control">
+										<option value="">-- Seleccionar --</option>
+										<option value="Wordpress">Escuela de DJ</option>
+										<option value="PHP / MySQL">Salas de Ensayo</option>
+										<option value="HTML5 / CSS3">Produccion de Eventos</option>
+										<option value="Graphic Design">Alquiler de Equipos</option>
+									</select>
+								</div>
+
+								<div class="clear"></div>
+
+								<div class="col_full">
+									<label for="template-contactform-message">Mensaje <small>*</small></label>
+									<textarea class="required sm-form-control" id="inputMessage" name="inputMessage" rows="6" cols="30"></textarea>
+								</div>
+
+								<div class="col_full">
+									<button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit" class="button button-3d nomargin">Enviar</button>
+								</div>
+
+							</form>
+						</div>
+
+					<!-- Contact Info
+					============================================= -->
+					<div class="row clear-bottommargin">
+
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-map-marker2"></i></a>
+								</div>
+								<h3>Nuestro Estudio<span class="subtitle">Bahía Blanca, Argentina</span></h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-phone3"></i></a>
+								</div>
+								<h3>Llamanos<span class="subtitle">(+54) 9 11 5964-9188</span></h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-instagram"></i></a>
+								</div>
+								<h3>Seguinos en <a href="https://www.instagram.com/247studioar">Instagram</a></h3>
+							</div>
+						</div>
+
+						<div class="col-lg-3 col-md-6 bottommargin clearfix">
+							<div class="feature-box fbox-center fbox-bg fbox-plain">
+								<div class="fbox-icon">
+									<a href="#"><i class="icon-twitch"></i></a>
+								</div>
+								<h3>Y seguinos también en <a href="https://www.twitch.tv/247Studio">Twitch</a></h3>
+							</div>
+						</div>
+
+					</div><!-- Contact Info End -->
+
+				</div>
+
+                <div id="calltoaction" class="section nobottommargin ">
+                    <div class="container clear-bottommargin clearfix">
+                
+                        <div class="row clearfix">
+                            <div class="col-12 col-md-10">
+                                <p class="lead"><strong>Ofrecemos al artista que busca crecer un abanico de recursos y oportunidades para abrirse camino en el mundo de la música.</strong></p>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <a href="#" class="button button-border button-dark button-rounded button-large noleftmargin">Contactanos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+			</div>
+
+		</section><!-- #content end -->
