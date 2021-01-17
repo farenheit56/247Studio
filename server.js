@@ -80,6 +80,7 @@ app.get('/roster', (req, res) => {
     if (err) {
       res.render('error');
     } else {
+      console.log(allMembers)
       res.render('roster', { allMembers });
     }
   })

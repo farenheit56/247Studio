@@ -14,7 +14,8 @@ let newsSchema = new mongoose.Schema({
 let membersSchema = new mongoose.Schema({
     name: String,
     genre: String,
-    imagePath: String,
+    firstImage: String,
+    secondImage: String,
 });
 
 let members = mongoose.model('members', membersSchema);
@@ -27,7 +28,6 @@ module.exports = {
             if(err){
                 callback('Ocurrió un error al pedir el members')
             }else{
-                console.log(result)
                 callback(null, result)
             };
         })
