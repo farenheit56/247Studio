@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const handlebars = require('express-handlebars');
 const axios = require('axios');
 const data = require('./data');
-const PORT = process.env.PORT || 8082;
+const PORT = process.env.PORT || 8080;
 
 
 app.enable('trust proxy');
