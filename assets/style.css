@@ -13944,6 +13944,15 @@ body:not(.no-transition) #wrapper,
 	background-color: #EBBD34;
 }
 
+#calltoaction p {
+	color: #282828;
+}
+
+#contactCallToAction {
+	color:#282828;
+	border-color: #282828;
+}
+
 .web-map {
 	display: block;
 	

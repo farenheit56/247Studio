@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const handlebars = require('express-handlebars');
 const axios = require('axios');
 const data = require('./data');
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 
 
 app.enable('trust proxy');
@@ -42,6 +42,7 @@ app.get('/', (req, res) => {
     if (err) {
       res.render('error');
     } else {
+      console.log(allNews)
       res.render('home', { allNews });
     }
   })

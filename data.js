@@ -9,6 +9,7 @@ let newsSchema = new mongoose.Schema({
     name: String,
     link: String,
     imagePath: String,
+    order: Number
 });
 
 let membersSchema = new mongoose.Schema({
@@ -33,12 +34,12 @@ module.exports = {
         })
     },
     allnews: (callback) => {
-        news.find((err, result) => {
+        news.find().sort({order: -1}).exec((err, result) => {
             if(err){
                 callback('Ocurrió un error al pedir las novedades')
             }else{              
                 callback(null, result)
             };
-        })
+        });
     },
 }
