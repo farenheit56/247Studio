@@ -42,7 +42,6 @@ app.get('/', (req, res) => {
     if (err) {
       res.render('error');
     } else {
-      console.log(allNews)
       res.render('home', { allNews });
     }
   })
