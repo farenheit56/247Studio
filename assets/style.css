@@ -3063,7 +3063,6 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 	top: 0;
 	left: 0;
 	z-index: 5;
-	background: transparent url('images/grid.png') repeat;
 	-webkit-backface-visibility: hidden;
 }
 
@@ -13943,4 +13942,14 @@ body:not(.no-transition) #wrapper,
 
 #calltoaction {
 	background-color: #EBBD34;
+}
+
+.web-map {
+	display: block;
+	
+}
+
+.web-map ul  {
+	list-style-type: none;
+	text-align: center;
 }
