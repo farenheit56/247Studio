@@ -19,15 +19,24 @@ let membersSchema = new mongoose.Schema({
     secondImage: String,
 });
 
+let photosSchema = new mongoose.Schema({
+    eventName: String,
+    eventDate: String,
+    mediaPath: String,
+    mediaType: String,
+    videoPlaceholder: String,
+});
+
 let members = mongoose.model('members', membersSchema);
 let news = mongoose.model('news', newsSchema);
+let photos = mongoose.model('photos', photosSchema);
 
 
 module.exports = {
     allmembers: (callback) => {
         members.find((err, result) => {
             if(err){
-                callback('Ocurrió un error al pedir el members')
+                callback('Ocurrió un error al pedir los members')
             }else{
                 callback(null, result)
             };
@@ -42,4 +51,22 @@ module.exports = {
             };
         });
     },
+    allphotos: (callback) => {
+        photos.find((err, result) => {
+            if(err){
+                callback('Ocurrió un error al pedir las fotos')
+            }else{
+                callback(null, result)
+            };
+        })
+    },
+    singlephotoevents: (callback) => {
+        photos.distinct(("eventName"),(err, result) => {
+            if(err){
+                callback('Ocurrió un error al pedir los eventos de las fotos')
+            }else{
+                callback(null, result)
+            };
+        })
+    }
 }

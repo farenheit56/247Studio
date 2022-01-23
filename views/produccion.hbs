@@ -83,7 +83,7 @@
 							</div>
 							<div class="video-wrap">
 								<video id="slide-video" preload="auto" loop autoplay muted>
-									<source src='../../assets/images/videos/video4.mp4' type='video/mp4' />
+									<source src='../../assets/images/final247/videos/video4.mp4' type='video/mp4' />
 								</video>
 								<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 							</div>
@@ -114,10 +114,10 @@
 					<!-- Portfolio Filter
 					============================================= -->
 					<ul class="portfolio-filter clearfix" data-container="#portfolio">
-
 						<li class="activeFilter"><a href="#" data-filter="*">Ver todas</a></li>
-						<li><a href="#" data-filter=".06-12-20">06-12-20</a></li>
-						<li><a href="#" data-filter=".20-12-20">20-12-20</a></li>
+						{{#each allSinglePhotoEvents}}
+							<li><a href="#" data-filter=".{{format this}}">{{this}}</a></li>
+						{{/each}}
 
 					</ul><!-- #portfolio-filter end -->
 
@@ -127,36 +127,24 @@
 					============================================= -->
 					<div id="portfolio" class="portfolio grid-container clearfix">
 
-						<article class="portfolio-item 06-12-20">
+						{{#each allPhotos}}	
+						<article class="portfolio-item {{format eventName}}">
 							<div class="portfolio-image">
-								<a href="portfolio-single.html">
-									<img src="https://picsum.photos/400/300" alt="Open Imagination">
+								<a href="../../assets/images/final247/{{mediaPath}}" class="center-icon" data-lightbox="{{mediaType}}">
+									<img src="../../assets/images/final247/{{videoPlaceholder}}" alt="{{eventName}}">
 								</a>
 								<div class="portfolio-overlay">
-									<a href="../../assets/images/videos/aftermovie-06-12.mp4" class="center-icon" data-lightbox="iframe"><i
-											class="icon-line-play"></i></a>
+									<a href="../../assets/images/final247/{{mediaPath}}" class="center-icon" data-lightbox="{{mediaType}}">
+										<i class="icon-line-plus"></i>
+									</a>
 								</div>
 							</div>
 							<div class="portfolio-desc">
-								<h3><a href="portfolio-single.html">Aftermovie</a></h3>
-								<span><a href="#">06-12-20</a></span>
+								<h3>{{eventName}}</h3>
+								<span>{{eventDate}}</span>
 							</div>
-						</article>
-						<article class="portfolio-item 20-12-20">
-							<div class="portfolio-image">
-								<a href="portfolio-single.html">
-									<img src="https://picsum.photos/400/300" alt="Open Imagination">
-								</a>
-								<div class="portfolio-overlay">
-									<a href="../../assets/images/videos/aftermovie-20-12.mp4" class="center-icon" data-lightbox="iframe"><i
-											class="icon-line-play"></i></a>
-								</div>
-							</div>
-							<div class="portfolio-desc">
-								<h3><a href="portfolio-single.html">Aftermovie</a></h3>
-								<span><a href="#">20-12-20</a></span>
-							</div>
-						</article>						
+						</article>		
+						{{/each}}
 
 					</div><!-- #portfolio end -->
 				</div>	
@@ -169,7 +157,7 @@
                                 <p class="lead"><strong>Ofrecemos al artista que busca crecer un abanico de recursos y oportunidades para abrirse camino en el mundo de la música.</strong></p>
                             </div>
                             <div class="col-12 col-md-2">
-                                <a href="/contacto" class="button button-border button-dark button-rounded button-large noleftmargin">Contactanos</a>
+                                <a href="/contacto" id="contactCallToAction" class="button button-border button-dark button-rounded button-large noleftmargin">Contactanos</a>
                             </div>
                         </div>
                     </div>

@@ -27,6 +27,13 @@ const motor = handlebars.create({
 app.engine("hbs",motor.engine);
 app.set("view engine","hbs");
 
+motor.handlebars.registerHelper('format', function(str){
+  // str is the argument passed to the helper when called
+  str = str || '';
+  str = str.toLowerCase().split(' ').join("-")
+  return str;
+});
+
 
 //Seteo de bodyParser (para leer JSON)
 app.use(bodyParser.json());
@@ -64,7 +71,19 @@ app.get('/salas', (req, res) => {
 });    
 
 app.get('/produccion', (req, res) => {
-  res.render('produccion')
+  data.allphotos((err, allPhotos) => {
+    if (err) {
+      res.render('error');
+    } else {
+      data.singlephotoevents((err, allSinglePhotoEvents) => {
+        if (err) {
+          res.render('error');
+        } else {
+          res.render('produccion', { allPhotos, allSinglePhotoEvents });
+        }
+      })
+    }
+  })
 }); 
 
 app.get('/alquiler', (req, res) => {
