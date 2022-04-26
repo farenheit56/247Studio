@@ -54,6 +54,17 @@ app.get('/', (req, res) => {
   })
 });
 
+app.get('/memberships/:id', (req, res) => {
+  console.log(req.params.id);
+  data.getMembership(req.params.id, (err, membership) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(membership);
+    }
+  });
+});
+
 app.get('/actualidad', (req, res) => {
   res.render('actualidad')
 });    
